@@ -1,0 +1,58 @@
+<!--<div class="form-group">-->
+<!--  <input type="text" class="form-control" placeholder="Search By Name"-->
+<!--         style="width:300px" [(ngModel)]="searchTerm" />-->
+<!--</div>-->
+
+<!--<div class="content">-->
+<!--  <div class="container">-->
+<!--    <div class="row" *ngFor="let post of posts | async | search:{ title: searchTerm, content: searchTerm } : false | paginate: { itemsPerPage: 2, currentPage: p }">-->
+<!--      <div class="blogpost">-->
+<!--        <h3><a href="/post/{{post.id}}" class="blog-title">{{post.title}}</a></h3>-->
+<!--        <div>-->
+<!--          <i class="fas fa-user"></i> Author: <p>{{post.date |  date:'EEE  d MMM,y At hh:mm a'}}</p>-->
+<!--&lt;!&ndash;         <p>{{post.date}}</p>&ndash;&gt;-->
+<!--        </div>-->
+<!--        <p [innerHTML]="post.content"></p>-->
+<!--        <div>-->
+<!--          <a type="button" href="/post/{{post.id}}" class="read-more btn btn-default">Read More</a>-->
+<!--        </div>-->
+<!--        <hr>-->
+
+<!--      </div>-->
+<!--      <hr>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</div>-->
+<!--<div class="row">-->
+<!--  <pagination-controls (pageChange)="p = $event"></pagination-controls>-->
+<!--</div>-->
+
+
+<section class="details-card">
+  <input class="form-control m-3 ml-5" type="text" placeholder="Search" aria-label="Search" style="width: 25%"  [(ngModel)]="searchTerm">
+  <div class="container-fluid">
+    <div class="row m-4"  *ngFor="let post of posts | async | search:{ title: searchTerm, content: searchTerm } : false | paginate: { itemsPerPage: 2, currentPage: p }">
+      <div class="col-md-4">
+        <div class="card-content">
+          <div class="card-desc" *ngIf="!post.security">
+            <h3 >{{post.title}}</h3>
+            <i class="fas fa-user"></i> Created On: <p>{{post.date |  date:'EEE  d MMM,y At hh:mm a'}}</p>
+            <p>{{post.content}}</p>
+            <p>Author: {{post.username}}</p>
+            <a  href="/post/{{post.id}}" class="btn-card">Read</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</section>
+<div  style="width: auto;max-height: 20%">
+  <pagination-controls (pageChange)="p = $event"></pagination-controls>
+</div>
+<!-- details card section starts from here -->
+
+
+
+
+

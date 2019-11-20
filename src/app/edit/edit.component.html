@@ -1,0 +1,50 @@
+<!--<p>-->
+<!--  edit works!-->
+<!--</p>-->
+
+<!--<input type="text" [(ngModel)]="post.title" ><br>-->
+<!--<input type="text" [(ngModel)]="post.content">-->
+<!--<input type="radio" value=true name="abc" [(ngModel)]="postSecurity.security"> Private <br>-->
+<!--<input type="radio" value=false name="abc" [(ngModel)]="postSecurity.security" > Public-->
+
+<!--<input type="button" (click)="fun()" value="Submit">-->
+
+
+
+
+<section class="details-card">
+
+  <div class="container-fluid">
+    <div class="row m-4" >
+      <div class="col-md-4">
+        <div class="card-content">
+          <div class="card-desc" >
+
+            <!--            <a  href="/post/{{post.id}}" class="btn-card">Read</a>-->
+            <p class="ml-5"> Edit Title</p> <input class="form-control m-3 ml-5" type="text"   style="width: 40%" [(ngModel)]="post.title">
+            <p class="ml-5">Edit Content</p> <input class="form-control m-3 ml-5" type="text"   style="width: 80%" [(ngModel)]="post.content">
+
+
+
+            <!--            <input class="form-control ml-5" type="button" value="Add"  style="width: 25%" (click)="fun()">-->
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <input  type="radio"  class="ml-5" value=true name="abc" [(ngModel)]="postSecurity.security"> Private
+  <input  type="radio"  class="ml-5" value=false name="abc" [(ngModel)]="postSecurity.security"> Public
+</section>
+<button type="button" class="btn btn-primary ml-5 mt-3" (click)="fun()">Sumbit</button>
+
+
+
+
+
+
+
+
+
